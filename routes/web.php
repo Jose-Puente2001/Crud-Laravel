@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\PersonaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,14 +14,4 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-
-Route::get('/app', function(){
-	return view('app');
-});
-
-Route::post('task', 'TaskController@store');
+Route::resource('/', 'App\Http\Controllers\ArticleController');
