@@ -1,7 +1,7 @@
 @extends('layout.template');
 
 @section('content')
-<a href="/create" class="btn btn-primary">Create</a>
+<a href="{{ route('article.create')}}" class="btn btn-primary">Create</a>
 <table class="table table-dark table-striped mt-4">
 <thead>
 	<tr>
@@ -10,7 +10,8 @@
 		<th scope="col">Description</th>
 		<th scope="col">Amount</th>
 		<th scope="col">Price</th>
-		<th scope="col">Action</th>
+		<th scope="col">Edit</th>
+		<th scope="col">Delete</th>
 	</tr>
 </thead>
 <tbody>
@@ -21,14 +22,12 @@
 		<td>{{ $article->description }}</td>
 		<td>{{ $article->amount }}</td>
 		<td>{{ $article->price }}</td>
-		<td>
-			<form action="" method="post">
-				<a href="/{{ $article->id }}/edit" class="btn btn-info">Edit</a>
-				@csrf
-				@method('DELETE')
-			    <button type="submit" class="btn btn-danger">Delete</button>
-			</form>
-		</td>
+		<td><a href="{{ route('article.edit', $article)}}" class="btn btn-info">Edit</a></td> 
+			<form action="{{ route('article.destroy', $article) }}" method="post">
+			 @csrf
+			 @method('DELETE')
+		   <td><button type="submit" class="btn btn-danger">Delete</button></td>
+		   </form>
 	</tr>
 	@endforeach
 </tbody>

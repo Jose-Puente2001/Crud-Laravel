@@ -1,7 +1,7 @@
 @extends('layout.template');
 @section('content')
 <h2>Create</h2>
-<form action="/" method="post">
+<form action="{{ route('article.store')}}" method="post">
 	@csrf
 	<div class="mb-3">
 		<label for="" class="form-label">Code</label>
