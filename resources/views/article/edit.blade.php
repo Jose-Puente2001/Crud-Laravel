@@ -1,6 +1,6 @@
 @extends('layout.template');
 @section('content')
-<h2>Edit</h2>
+<h2 class="p-3">Edit</h2>
 <form action="{{ route('article.update', $article)}}" method="post">
 	@csrf
 	@method('PUT')

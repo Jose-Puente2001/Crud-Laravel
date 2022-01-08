@@ -1,6 +1,6 @@
 @extends('layout.template');
 @section('content')
-<h2>Create</h2>
+<h2 class="p-3">Create</h2>
 <form action="{{ route('article.store')}}" method="post">
 	@csrf
 	<div class="mb-3">
